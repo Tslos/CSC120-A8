@@ -175,8 +175,8 @@ public class Player implements Contract {
     private void exhaust(int amt) {
         this.playerEnergy -= amt;
         if (this.playerEnergy < 5) {
-        System.out.println("You are so tired that you can't stay awake. Sweet dreams!");
-        this.rest();
+            System.out.println("You are so tired that you can't stay awake. Sweet dreams!");
+            this.rest();
         } else if (this.playerEnergy < 10) {
             System.out.println("Listen, you really need to sleep now.");
         } else if (this.playerEnergy < 20) {
@@ -252,12 +252,13 @@ public class Player implements Contract {
     public void lookAround() {
         System.out.println(this.currentPlace);
     }
+
     /**
      * Records an action to the list of precent recorded actions. If the list is 10
      * long, moves every item in the list over one and adds the action in the last
      * place, thus deleting the 10th-most-recent entry
      * 
-     * @param args  the string name of the function that was called 
+     * @param args the string name of the function that was called
      */
     private void recordAction(String action) {
         if (this.actions.size() < 10) {
@@ -272,11 +273,13 @@ public class Player implements Contract {
     }
 
     /**
-     * Records the argument of the most recent action to the list of precent recorded agrs. If the list is 10
+     * Records the argument of the most recent action to the list of precent
+     * recorded agrs. If the list is 10
      * long, moves every item in the list over one and adds the agr in the last,
-     * place, thus deleting the 10th-most-recent entry. If no arg was used in the function call, "" is filled in. 
+     * place, thus deleting the 10th-most-recent entry. If no arg was used in the
+     * function call, "" is filled in.
      * 
-     * @param args  the string name of the arg to the function that was called 
+     * @param args the string name of the arg to the function that was called
      */
     private void recordArgs(String args) {
         if (this.actionArgs.size() < 10) {
@@ -291,7 +294,8 @@ public class Player implements Contract {
     }
 
     /**
-     * Prints the 10 most recently called "undoable" actions in least recent - most recent order. 
+     * Prints the 10 most recently called "undoable" actions in least recent - most
+     * recent order.
      */
     public void printActions() {
         for (int i = 0; i <= this.actions.size() - 1; i++) {
